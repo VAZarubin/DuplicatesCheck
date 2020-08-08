@@ -16,7 +16,7 @@ namespace Duplicates
 
             listWithDuplicates.AddRange(Enumerable.Range(0, 100000).Select(x => rand.Next(x)));
 
-            var anotherList = new List<int>() {1, 1, 1, 1, 3, 4, 4, 4, 1, 3};
+            var anotherList = new List<int>() { 1, 1, 1, 1, 3, 4, 4, 4, 1, 3 };
 
             if (ContainsDuplicates(RemoveDuplicates(listWithDuplicates)) && ContainsDuplicates(RemoveDuplicates(anotherList)))
             {
@@ -32,8 +32,22 @@ namespace Duplicates
         public static List<int> RemoveDuplicates(List<int> listWithDuplicates)
         {
             /*TODO: Remove Duplicates in listWithDuplicates*/
+            for (int i = 0; i < listWithDuplicates.Count; i++)
+            {
 
-            return null; //return list without duplicates
+                for (int j = i + 1; j < listWithDuplicates.Count; j++)
+                {
+                    if (listWithDuplicates[i] == listWithDuplicates[j])
+                    {
+                        listWithDuplicates.RemoveAt(j);
+                        j--;
+                    }
+
+                }
+            }
+
+
+            return listWithDuplicates; //return list without duplicates
         }
 
 
