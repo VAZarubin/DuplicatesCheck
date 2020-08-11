@@ -33,7 +33,7 @@ namespace Duplicates
         {
             /*TODO: Remove Duplicates in listWithDuplicates*/
 
-            return null; //return list without duplicates
+            return (new HashSet<int>(listWithDuplicates)).ToList(); //return list without duplicates
         }
 
 
